@@ -19,7 +19,7 @@ Regex Version of commands:
     ^(\s*)end;
 
 Regex Command Finder:
-    ^(\s*)(.+).*
+    ^(\s*)(.+) .*
 
 //Dictionaries will be really useful to store 'variables'
 //clear is also used to create new variables

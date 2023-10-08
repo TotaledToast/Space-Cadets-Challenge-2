@@ -28,16 +28,19 @@ class Program_Runner {
     Dictionary<String, Integer> Variables = new Hashtable<>();
 
     void Run_Code(){
-        for (String Line : programInput){
-            String command = get_Command(Line);
-            Run_Command(command, Line);
-            Display_Variable();
+
+
+        do {
+            String command = get_Command(programInput.get(CurrentLine));
+            Run_Command(command, programInput.get(CurrentLine));
+            Display_Variable(programInput.get(CurrentLine));
             CurrentLine++;
-        }
+        } while (CurrentLine < programInput.size());
+        System.out.println("HI!");
     }
 
-    void Display_Variable(){
-        System.out.println("Variable are: " + Variables);
+    void Display_Variable(String line){
+        System.out.println("Code Was : " + line + "| Variables are: " + Variables);
     }
 
     void Run_Command(String command, String Line){
@@ -94,11 +97,12 @@ class Program_Runner {
     }
 
     String get_Command(String Line){
-        return Line.replaceAll("^(\\s*)(.+).*", "$2");
+        return Line.replaceAll("(\\s*)(clear|incr|decr|while|end)(.*);", "$2");
     }
 
     public Program_Runner(String fileName) throws FileNotFoundException {
         fileReader(fileName);
+        Run_Code();
     }
 
     void fileReader(String fileName) throws FileNotFoundException {
