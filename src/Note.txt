@@ -1,0 +1,34 @@
+Needed commands:
+    clear <>
+    incr <>
+    decr <>
+
+Needed 'Function':
+    while <> not 0 do:
+    ...
+    ...
+    end;
+
+Regex Version of commands:
+    ^(\s*)clear (.+);
+    ^(\s*)incr (.+);
+    ^(\s*)decr (.+);
+
+    ^(\s*)while (.+) not 0 do;
+
+    ^(\s*)end;
+
+Regex Command Finder:
+    ^(\s*)(.+).*
+
+//Dictionaries will be really useful to store 'variables'
+//clear is also used to create new variables
+
+System.out.println(element.replaceAll(<Regex Command Finder>, "$2"));
+This will split the command from the rest of a regex statement.
+
+System.out.println(element.replaceAll(<REGEX EXPERSSION>, "$2"));
+This will split the desired variable name from the rest of the expression.
+
+System.out.println(element.replaceAll(<REGEX EXPERSSION>, "$1"));
+This will split the starting white space from the rest of the expression. Will be useful for while loops
