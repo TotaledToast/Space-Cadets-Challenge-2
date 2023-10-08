@@ -32,3 +32,19 @@ This will split the desired variable name from the rest of the expression.
 
 System.out.println(element.replaceAll(<REGEX EXPERSSION>, "$1"));
 This will split the starting white space from the rest of the expression. Will be useful for while loops
+
+Have to read text in from the file
+cycle through each line in the file
+decipher each command for a line
+create or edit any variables if required
+keep track of how indented while loops are (planning on finding the corresponding end; using how indented they are)
+Create an output of all variable to keep get record of execution
+
+
+File input = new File("Tester.txt");
+        Scanner fileReader = new Scanner(input);
+        while (fileReader.hasNextLine()){
+            String line = fileReader.nextLine();
+            System.out.println(line);
+        }
+        fileReader.close();
