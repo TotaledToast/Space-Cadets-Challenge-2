@@ -32,15 +32,15 @@ class Program_Runner {
 
         do {
             String command = get_Command(programInput.get(CurrentLine));
+            System.out.print("Line: " + CurrentLine + " Code: " + programInput.get(CurrentLine) + " | ");
             Run_Command(command, programInput.get(CurrentLine));
-            Display_Variable(programInput.get(CurrentLine));
+            Display_Variable();
             CurrentLine++;
         } while (CurrentLine < programInput.size());
-        System.out.println("HI!");
     }
 
-    void Display_Variable(String line){
-        System.out.println("Code Was : " + line + "| Variables are: " + Variables);
+    void Display_Variable(){
+        System.out.println("Variables are: " + Variables);
     }
 
     void Run_Command(String command, String Line){
